@@ -1,0 +1,41 @@
+<!DOCTYPE HTML>
+<html>
+
+    <head>
+        <meta charset="utf-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+
+        <title>Aurélien Hugues | {{ current_page }}</title>
+
+        <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = './css/base.css') }}">
+
+        <link href="https://fonts.googleapis.com/css?family=Montserrat:200,300,400,500,600" rel="stylesheet">
+        
+        {% block stylesheet %}{% endblock %}
+    </head>
+
+    <body>
+
+        <div class="page-header">
+            {% block page_header %}{% endblock %}
+        </div>
+
+        <nav class="navbar">
+            <a class="{% if current_page == 'about' %}active{% endif %}" href="{{ url_for('main_views.home_page') }}">Home</a>
+            <a class="{% if current_page == 'blog' %}active{% endif %}" href="{{ url_for('blog_views.home_page') }}">Blog</a>
+        </nav>
+
+        <hr class="nav-bottom-line"/>
+
+        <div class="page-content">
+            {% block body %}{% endblock %}
+        </div>
+
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.0/jquery.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/jquery.validate.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+        
+        {% block script %}{% endblock %}
+    </body>
+
+</html>

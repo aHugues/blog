@@ -1,0 +1,46 @@
+html {
+    margin: 0;
+    background-color: #37474F;
+    font-family: 'Montserrat', Arial, sans-serif;
+}
+
+.navbar {
+    display: grid;
+    grid-template-columns: auto auto;
+    width: 300px;
+    padding-top: 20px;
+    padding-bottom: 10px;
+    margin: auto;
+    text-align: center;
+}
+
+.navbar a {
+    text-decoration: none;
+    color: white;
+    font-weight: 200;
+    font-size: 18pt;
+}
+
+.navbar a.active {
+    font-weight: 500; 
+}
+
+.nav-bottom-line {
+    border: 0;
+    height: 1px;
+    background: #CFD8DC;
+    width: 93%;
+}
+
+.page-content {
+    width: 95%;
+    margin: auto;
+    padding-top: 20px;
+}
+
+.page-header {
+    width: 95%;
+    height: 120px;
+    margin: auto;
+}
+
