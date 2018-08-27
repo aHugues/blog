@@ -38,4 +38,32 @@
         {% block script %}{% endblock %}
     </body>
 
+    <footer>
+        <div class="footer-social-container">
+            <div></div>
+            <a target="_blank" href='https://twitter.com/hugues_aurelien' title="Twitter account">
+                <img src="{{ url_for('static', filename = './img/social/twitter.png') }}" alt="twitter-logo">
+            </a>
+            <a target="_blank" href='https://www.linkedin.com/in/aurhugues/' title="LinkedIn account">
+                <img src="{{ url_for('static', filename = './img/social/linkedin.png') }}" alt="linkedin-logo">
+            </a>
+            <a target="_blank" href='https://github.com/aHugues' title="Github account">
+                <img src="{{ url_for('static', filename = './img/social/github.png') }}" alt="github-logo">
+            </a>
+            <div></div>
+        </div>
+        <hr class="footer-separator" />
+        <div class="footer-links-container">
+            <div class="separator"></div>
+            <div class="copyright">© 2018 - Aurélien Hugues</div>
+            <div class="links">
+                <a href='/'>Site map</a>
+                <a class="vertical-separator" href='/'>Privacy Policy</a>
+                <a class="vertical-separator" href='/'>Contact</a>
+            </div>
+            <div class="separator"></div>
+        </div>
+    </footer>
+
+
 </html>

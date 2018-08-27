@@ -1,4 +1,4 @@
-html {
+body {
     margin: 0;
     background-color: #37474F;
     font-family: 'Montserrat', Arial, sans-serif;
@@ -44,3 +44,122 @@ html {
     margin: auto;
 }
 
+footer {
+    background-color: #263238;
+    opacity: 0.9;
+    width: 100%;
+    box-sizing: border-box;
+    margin-top: 20px;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    padding-left: 40px;
+    padding-right: 40px;
+}
+
+.copyright {
+    text-align: center;
+    font-size: 14pt;
+    color: #ECEFF1;
+    font-weight: 500;
+    text-align: left;
+}
+
+.footer-social-container {
+    margin: auto;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    display: grid;
+    grid-template-columns: auto 45px 45px 45px auto;
+    grid-column-gap: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.footer-social-container a img {
+    width: 42px;
+    height: 42px;
+    transition: opacity 0.3s;
+}
+
+.footer-social-container a img:hover {
+    opacity: 0.5;
+}
+
+.footer-links-container {
+    width: 1000px;
+    margin: auto;
+    margin-top: 10px;
+    display: grid;
+    grid-template-columns: auto 300px auto auto;
+    grid-column-gap: 60px;
+    grid-row-gap: 10px;
+    align-items: center;
+}
+
+.links {
+    display: grid;
+    grid-template-columns: auto auto auto;
+    text-align: center;
+}
+
+.footer-links-container a {
+    text-decoration: none;
+    color: #CFD8DC;
+    font-size: 10pt;
+    font-weight: 300;
+    width: 100%;
+    box-sizing: border-box;
+    transition: color 0.3s;
+}
+
+.footer-links-container a:hover {
+    color: #ECEFF1;
+    font-weight: 400;
+}
+
+.footer-separator {
+    border: 0;
+    height: 1px;
+    background: #B0BEC5;
+    opacity: 0.5;
+    width: 800px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+
+.vertical-separator {
+    border-left: 1px solid #78909C;
+}
+
+@media screen and (max-width: 1100px) {
+
+    .footer-separator {
+        width: 80%;
+    }
+
+    .footer-links-container {
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 800px) {
+
+    .footer-links-container {
+        grid-template-columns: auto;
+    }
+
+    .footer-links-container .separator {
+        display: none;
+    }
+
+    .copyright {
+        text-align: center;
+    }
+}
+
+@media screen and (max-width: 400px) {
+    .footer-social-container a img {
+        width: 30px;
+        height: 30px;
+    }
+}
