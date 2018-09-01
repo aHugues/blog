@@ -16,16 +16,20 @@
 
     <body>
 
-        <div class="page-header">
-            {% block page_header %}{% endblock %}
+        <div class="fixed-header">
+
+            <div class="page-header">
+                {% block page_header %}{% endblock %}
+            </div>
+
+            <nav class="navbar">
+                <a class="{% if current_page == 'about' %}active{% endif %}" href="{{ url_for('main_views.home_page') }}">Home</a>
+                <a class="{% if current_page == 'blog' %}active{% endif %}" href="{{ url_for('blog_views.home_page') }}">Blog</a>
+            </nav>
+
+            <hr class="nav-bottom-line"/>
+
         </div>
-
-        <nav class="navbar">
-            <a class="{% if current_page == 'about' %}active{% endif %}" href="{{ url_for('main_views.home_page') }}">Home</a>
-            <a class="{% if current_page == 'blog' %}active{% endif %}" href="{{ url_for('blog_views.home_page') }}">Blog</a>
-        </nav>
-
-        <hr class="nav-bottom-line"/>
 
         <div class="page-content">
             {% block body %}{% endblock %}

@@ -8,8 +8,8 @@ body {
     display: grid;
     grid-template-columns: auto auto;
     width: 300px;
-    padding-top: 20px;
-    padding-bottom: 10px;
+    padding-top: 5px;
+    padding-bottom: 0;
     margin: auto;
     text-align: center;
 }
@@ -35,13 +35,23 @@ body {
 .page-content {
     width: 95%;
     margin: auto;
+    margin-top: 160px;
     padding-top: 20px;
 }
 
 .page-header {
     width: 95%;
-    height: 120px;
+    height: 100px;
     margin: auto;
+}
+
+.fixed-header {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: #37474F;
+    opacity: 0.95;
 }
 
 footer {
@@ -49,7 +59,6 @@ footer {
     opacity: 0.9;
     width: 100%;
     box-sizing: border-box;
-    margin-top: 20px;
     padding-top: 20px;
     padding-bottom: 30px;
     padding-left: 40px;
