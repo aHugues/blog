@@ -36,6 +36,7 @@ body {
     width: 95%;
     margin: auto;
     margin-top: 160px;
+    margin-bottom: 20px;
     padding-top: 20px;
 }
 
@@ -138,6 +139,18 @@ footer {
 
 .vertical-separator {
     border-left: 1px solid #78909C;
+}
+
+.blog-headers {
+    text-align: center;
+}
+
+.blog-title {
+    color: #ECEFF1;
+}
+
+.blog-subtitle {
+    color: #B0BEC5;
 }
 
 @media screen and (max-width: 1100px) {
