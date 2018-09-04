@@ -15,4 +15,4 @@ class Article(db.Model):
         self.date = date
     
     def __repr__(self):
-        return '<id {}'.format(self.id)
+        return '<id {}>'.format(self.id)
