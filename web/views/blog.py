@@ -10,7 +10,7 @@ articles_service = ArticlesService()
 
 @blog_views.route('/blog')
 def home_page():
-    articles = ['article ' + str(x) for x in range(10)]
+    articles = articles_service.listArticles()
     return render_template('blog.html',
         articles=articles,
         current_page="blog",
