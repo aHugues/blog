@@ -32,6 +32,13 @@
 {% endblock %}
 
 {% block body %}
-{{ current_page }}
+
+<div class="admin-articles-list">
+    {% for article in articles %}
+        <div class="admin-article-card">
+            {{ article.title }}
+        </div>
+    {% endfor %}
+</div>
     
 {% endblock %}

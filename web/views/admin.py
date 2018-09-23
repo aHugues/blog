@@ -9,6 +9,9 @@ from flask_bcrypt import Bcrypt
 import flask_login
 from flask import Flask
 import configparser
+from ..services import ArticlesService
+
+articles_service = ArticlesService()
 
 config = configparser.ConfigParser()
 try:
@@ -49,7 +52,8 @@ def unauthorized_handler():
 @flask_login.login_required
 def home_page():
     return render_template('admin.html',
-        current_page = 'admin'
+        current_page = 'admin',
+        articles = articles_service.listArticles()
     )
 
 
