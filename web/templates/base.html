@@ -16,6 +16,7 @@
 
     <body>
 
+        {% block header %}
         <div class="fixed-header">
 
             <div class="page-header">
@@ -37,6 +38,7 @@
             <hr class="nav-bottom-line"/>
 
         </div>
+        {% endblock %}
 
         <div class="page-content">
             {% block body %}{% endblock %}
@@ -49,6 +51,7 @@
         {% block script %}{% endblock %}
     </body>
 
+    {% block footer %}
     <footer>
         <div class="footer-social-container">
             <div></div>
@@ -75,6 +78,7 @@
             <div class="separator"></div>
         </div>
     </footer>
+    {% endblock %}
 
 
 </html>
