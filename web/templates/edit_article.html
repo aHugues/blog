@@ -33,14 +33,7 @@
 
 {% block body %}
 
-<div class="admin-articles-list">
-    {% for article in articles %}
-        <a href="{{ url_for('admin_views.edit_article', articleid=article.id) }}">
-            <div class="admin-article-card">
-                {{ article.title }}
-            </div>
-        </a>
-    {% endfor %}
+<div class="article-edit">
 </div>
     
 {% endblock %}

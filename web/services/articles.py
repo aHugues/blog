@@ -27,4 +27,8 @@ class ArticlesService:
         article = Article(title=title, content=content, date=now)
         db.session.add(article)
         db.session.commit()
+    
+    def get_article(self, articleid):
+        article = Article.query.filter(Article.id == articleid).first()
+        return article
 

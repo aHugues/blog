@@ -35,3 +35,12 @@
 .admin-article-card:hover::after, .admin-article-card:focus::after {
     opacity: 1;
 }
+
+.article-edit {
+    background-color: white;
+}
+
+a {
+    text-decoration: none;
+    color: black;
+}

@@ -56,6 +56,13 @@ def home_page():
         articles = articles_service.listArticles()
     )
 
+@admin_views.route('/admin/article/<articleid>')
+@flask_login.login_required
+def edit_article(articleid):
+    return render_template('edit_article.html',
+        article = articles_service.get_article(articleid)
+    )
+
 
 @admin_views.route('/login', methods=['GET', 'POST'])
 def login():
