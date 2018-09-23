@@ -1,6 +1,9 @@
 from flask import Blueprint
 from flask import render_template
 from flask import request
+from flask import redirect
+from flask import flash
+from flask import url_for
 from flask_bcrypt import Bcrypt
 import flask_login
 from flask import Flask
@@ -11,7 +14,7 @@ admin_views = Blueprint('admin_views', __name__)
 
 bcrypt = Bcrypt(app)
 login_manager = flask_login.LoginManager()
-login_manager.init_app(app)
+
 
 class User(flask_login.UserMixin):
 
@@ -28,11 +31,17 @@ def user_loader(user_id):
     return user
 
 
+@login_manager.unauthorized_handler
+def unauthorized_handler():
+    return redirect(url_for('admin_views.login'))
+
 
 @admin_views.route('/admin')
+@flask_login.login_required
 def home_page():
     return render_template('admin.html',
     )
+
 
 @admin_views.route('/login', methods=['GET', 'POST'])
 def login():
@@ -44,6 +53,13 @@ def login():
         user = User()
         user.id = 'admin'
         flask_login.login_user(user)
-        return 'ok'
+        return redirect(url_for('admin_views.home_page'))
     
-    return 'nope'
+    flash('Login failed')
+    return redirect(url_for('admin_views.login'))
+
+
+@admin_views.route('/logout')
+def logout():
+    flask_login.logout_user()
+    return redirect(url_for('main_views.home_page'))
