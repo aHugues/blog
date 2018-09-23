@@ -5,7 +5,33 @@
 {% endblock %}
       
 
-{% block body %}
+{% block header %}
+<div class="fixed-header">
 
+    <div class="page-header">
+        <div class="blog-headers">
+            <h1 class="blog-title">
+                blog-title
+            </h1>
+            <h2 class="blog-subtitle">
+                Admin interface
+            </h2>
+        </div>
+    </div>
+
+    <nav class="navbar">
+        <a class="{% if current_page == 'blog' %}active{% endif %}" href="{{ url_for('blog_views.home_page') }}">Blog</a>
+        <a class="{% if current_page == 'admin' %}active{% endif %}" href="{{ url_for('admin_views.home_page') }}">Admin</a>
+        <!-- <a class="{% if current_page == 'blog' %}active{% endif %}" href="{{ url_for('blog_views.home_page') }}">Blog</a> -->
+        <a href="{{ url_for('admin_views.logout') }}">Logout</a>
+    </nav>
+
+    <hr class="nav-bottom-line"/>
+
+</div>
+{% endblock %}
+
+{% block body %}
+{{ current_page }}
     
 {% endblock %}

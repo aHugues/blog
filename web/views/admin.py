@@ -49,6 +49,7 @@ def unauthorized_handler():
 @flask_login.login_required
 def home_page():
     return render_template('admin.html',
+        current_page = 'admin'
     )
 
 

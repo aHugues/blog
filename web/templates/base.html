@@ -71,7 +71,11 @@
             <div class="separator"></div>
             <div class="copyright">© 2018 - Aurélien Hugues</div>
             <div class="links">
-                <a href="{{ url_for('admin_views.home_page') }}">Login</a>
+                {% if current_user.is_authenticated %}
+                    <a href="{{ url_for('admin_views.home_page') }}">Admin</a>
+                {% else %}
+                    <a href="{{ url_for('admin_views.home_page') }}">Login</a>
+                {% endif %}
                 <a class="vertical-separator" href='/'>Privacy Policy</a>
                 <a class="vertical-separator" href='/'>Contact</a>
             </div>
