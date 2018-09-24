@@ -2,8 +2,13 @@
         
 {% block stylesheet %}
     <link rel="stylesheet" type="text/css" href="{{ url_for('static', filename = './css/admin.css') }}">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.css">
 {% endblock %}
       
+{% block script %}
+    <script src="https://cdn.jsdelivr.net/simplemde/latest/simplemde.min.js"></script>
+    <script src="{{ url_for('static', filename = './scripts/article_edit.js') }}"></script>
+{% endblock %}
 
 {% block header %}
 <div class="fixed-header">
@@ -33,7 +38,37 @@
 
 {% block body %}
 
-<div class="article-edit">
+<div class="article-edit-card">
+    <form>
+        <div class="article-edit-form">
+            <div class="image-edit">
+                <img src="{{ article.image }}" alt="Article image">
+                <input type="url" name="image" id="image" value="{{ article.image }}"/>
+                <button>Update</button>
+            </div>
+            <div class="title-edit input-container">
+                <label for="title">Title</label>
+                <input type="text" name="title" id="title" placeholder="Title" value="{{ article.title }}"/>
+            </div>
+            <div class="tags-edit input-container">
+                <label >Tags</label>
+                <input type="text" placeholder="Tags" />
+            </div>
+            <div class="subtitle-edit input-container">
+                <label >Subtitle</label>
+                <input type="text" />
+            </div>
+            <div class="content-edit">
+                <textarea id="content" name="content" value="{{ article.content }}"></textarea>
+            </div>
+        </div>
+        <div class="actions">
+            <input type="reset" value="Reset" />
+            <input type="submit" value="Save" />
+            <button>Publish</button>
+            <button>Delete</button>
+        </div>
+    </form>
 </div>
     
 {% endblock %}
